@@ -1,0 +1,97 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.text {
+  &-right {
+    text-align: right;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-left {
+    text-align: left;
+  }
+
+  &-justify {
+    text-align: justify;
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+
+  &-light {
+    font-weight: 300;
+  }
+
+  &-regular {
+    font-weight: 400;
+  }
+  &-medium {
+    font-weight: 500;
+  }
+  &-semibold {
+    font-weight: 600;
+  }
+
+  &-bold {
+    font-weight: 700;
+  }
+
+  &-m {
+    color: #242223;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  &-l {
+    font-weight: 400;
+    @include fontSize(14, 18);
+    line-height: 1.25;
+    color: $primaryColor;;
+  }
+
+  &-xl {
+    @include fontSize(30, 45);
+    line-height: 1.25;
+  }
+}
+
+.heading-font {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+
+.icon-ar-left:before {
+  content: "\e900";
+}
+.icon-ar-right:before {
+  content: "\e901";
+}
+.icon-arrow-right:before {
+  content: "\e902";
+}
+.icon-clip:before {
+  content: "\e903";
+}
+.icon-facebook:before {
+  content: "\e904";
+}
+.icon-instagram:before {
+  content: "\e905";
+}
+.icon-telegram:before {
+  content: "\e906";
+}
+.icon-viber:before {
+  content: "\e907";
+}
+.icon-whatsapp:before {
+  content: "\e908";
+}
+.icon-youtube:before {
+  content: "\e909";
+}

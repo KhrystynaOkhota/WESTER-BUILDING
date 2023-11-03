@@ -1,0 +1,267 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+
+.html {
+  &.overflow-menu {
+    overflow: hidden;
+  }
+}
+
+html.overflow-hidden body {
+  overflow: hidden;
+}
+
+/*#loader-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: var(--clr-black);
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-animation: loader 1.8s linear;
+  animation: loader 1.8s linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+*/
+html:not(.touch-screen)::-webkit-scrollbar, html:not(.touch-screen) *::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+html:not(.touch-screen)::-webkit-scrollbar-track, html:not(.touch-screen) *::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+
+html:not(.touch-screen)::-webkit-scrollbar-thumb, html:not(.touch-screen) *::-webkit-scrollbar-thumb {
+  background-color: $accentColor !important;
+}
+
+.lg-actions .lg-next, .lg-actions .lg-prev {
+  background-color: transparent !important;
+  color: $whiteColor !important;
+}
+
+.lg-autoplay-button {
+  display: none !important;
+}
+
+body, html {
+  height: 100%;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body .hide-scrollbar, html .hide-scrollbar {
+  scrollbar-width: none
+}
+
+body .hide-scrollbar::-webkit-scrollbar, html .hide-scrollbar::-webkit-scrollbar {
+  display: none
+}
+
+
+img::selection {
+  background-color: transparent;
+}
+
+.default-icon {
+  width: 100%;
+
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.--relative {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.overlap {
+  position: relative;
+  z-index: 3;
+}
+
+body {
+  &.overflow-hidden {
+    // padding-left: calc(100vw - 100%);
+    overflow: hidden;
+
+  }
+}
+
+html.overflow-menu, html.overflow-menu body {
+  overflow: hidden;
+}
+
+
+.full-height, body, html {
+  height: 100%;
+}
+
+.body-padding {
+  height: 80px;
+  @media (max-width: $breakpoint-md) {
+    height: 85px;
+  }
+}
+
+
+.section {
+  overflow: hidden;
+  position: relative;
+
+  & .heading {
+
+  }
+}
+
+
+.main {
+  // overflow: hidden;
+
+  &-wrapper {
+    //   position: relative;
+    //  min-height: 100vh;
+    //  overflow: hidden;
+    z-index: 1;
+  }
+
+  &__collection {
+    overflow: hidden;
+    margin-bottom: 57px;
+    @media (max-width: $breakpoint-lg) {
+      margin-bottom: 68px;
+    }
+  }
+}
+
+.swiper {
+  &-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    @include transition(.5);
+
+    &.swiper-initialized {
+      opacity: 1;
+    }
+  }
+
+  &-pagination {
+    position: relative;
+    display: flex;
+    width: auto !important;
+
+    &-bullet {
+      display: block;
+      font-size: 0;
+      width: 10px;
+      height: 10px;
+      background-color: rgba(173, 133, 109, 0.3);
+      border-radius: 100%;
+      margin: 0 10px;
+      @include transition(.4);
+
+      &:hover, &-active {
+        background-color:  rgba(173, 133, 109, 1);
+      }
+    }
+  }
+
+  &-fraction {
+    &__current {
+      color: #AD856D;
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: 0.75px;
+      padding-right: 30px;
+      &:after {
+        content: '';
+        width: 1px;
+        height: 17px;
+        background-color: #AD856D;
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+      }
+    }
+
+    &__total {
+      color: #AD856D;
+
+      font-size: 18px;
+      letter-spacing: 0.54px;
+    }
+  }
+
+  &-controls {
+
+  }
+
+  &-button-next, &-button-prev {
+    width: 25px;
+    height: 25px;
+    @include transition(.4);
+
+    & i {
+      @include fontSize(16, 24);
+      font-weight: 300;
+      color: #AD856D;
+      @include transition(.5);
+    }
+
+
+    &:after {
+      display: none;
+    }
+
+    &:hover {
+      border-color: #FB0;
+
+      & i {
+        color: #FB0;
+      }
+    }
+  }
+
+  &-button-next {
+    margin-left: 20px;
+  }
+}

@@ -1,0 +1,492 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.events-card {
+  display: block;
+  margin-bottom: 70px;
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 50px;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 10px;
+
+    &-wrap {
+      padding-bottom: 62%;
+      border-radius: 10px;
+
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    @include fontSize(20, 25);
+    line-height: 1.4;
+    margin-top: 22px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 11px;
+      margin-top: 11px;
+    }
+  }
+
+  & .btn-more {
+    @media (max-width: $breakpoint-md) {
+      font-size: 16px;
+      & i {
+        margin-left: 10px;
+      }
+      & span {
+        &:after {
+          height: 9px;
+        }
+      }
+    }
+  }
+}
+
+.events {
+  &__location {
+    max-width: 250px;
+    color: #231F20;
+    font-size: 17px;
+    padding: 20px 10px;
+    border-radius: 10px;
+    background: $whiteColor;
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    @media (max-width: 360px) {
+      font-size: 15px;
+    }
+  }
+
+  &__date, &__time {
+    color: #231F20;
+    font-size: 17px;
+
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 9px;
+    @media (max-width: $breakpoint-md) {
+      width: calc(50% - 5px);
+    }
+    @media (max-width: 360px) {
+      font-size: 15px;
+    }
+
+    & img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+  }
+
+  &__date {
+    @media (max-width: $breakpoint-sm) {
+
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: flex-start;
+    @media (max-width: $breakpoint-md) {
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    li {
+      margin-right: 10px;
+      border-radius: 5px;
+      border-bottom: 1px solid rgba(72, 88, 138, 0.2);
+      background-color: transparent;
+      padding: 16px 18px 14px 18px;
+      @include transition(.5);
+      @media (max-width: $breakpoint-md) {
+        width: 33%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 2px;
+      }
+
+      & a {
+        color: #465CA3;
+        font-size: 16px;
+        font-weight: 500;
+        @include transition(.5);
+        @media (max-width: $breakpoint-sm) {
+          font-size: 14px;
+        }
+      }
+
+      &:nth-child(1) {
+        @media (min-width: $breakpoint-md) {
+          min-width: 130px;
+        }
+      }
+
+      &:not(&:first-child) {
+        @media (min-width: $breakpoint-md) {
+          min-width: 160px;
+        }
+      }
+
+      &.current, &:hover {
+        background-color: rgba(255, 187, 0, 1);
+        border-color: rgba(255, 187, 0, 1);
+
+        & a {
+          color: $whiteColor;
+        }
+
+      }
+
+      &.current {
+
+        & a {
+          font-weight: bold;
+
+        }
+      }
+    }
+  }
+
+  &__info {
+    color: #231F20;
+    font-size: 17px;
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 9px;
+    margin-bottom: 30px;
+
+    & img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    & span {
+      padding-left: 5px;
+    }
+  }
+}
+
+
+.s-events {
+  padding: 75px 0 135px 0;
+  @media (max-width: $breakpoint-md) {
+    padding: 30px 0 50px 0;
+  }
+
+  &__top {
+    margin-bottom: 40px;
+  }
+
+  & .column {
+    &:nth-child(even) {
+      .events-card {
+        //  margin-top: 70px;
+        @media (max-width: $breakpoint-md) {
+          margin-top: 0;
+        }
+      }
+    }
+
+    &:nth-child(4n+1),
+    &:nth-child(4n+2) {
+
+      .events-card {
+        margin-right: 10%;
+        @media (max-width: $breakpoint-md) {
+          margin-right: 0;
+        }
+      }
+
+    }
+
+    &:nth-child(4n+3),
+    &:nth-child(4n+4) {
+      .events-card {
+        margin-left: 10%;
+        @media (max-width: $breakpoint-md) {
+          margin-left: 0;
+        }
+      }
+
+    }
+  }
+
+  .select-box {
+    @media (max-width: $breakpoint-md) {
+      width: 100%;
+    }
+
+    &:nth-child(1) {
+      margin-right: 20px;
+      @media (max-width: $breakpoint-md) {
+        margin: 0 0 20px 0;
+      }
+    }
+
+    &__wrap {
+      @media (max-width: $breakpoint-md) {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+  }
+
+
+}
+
+
+.select-box {
+  & select {
+    opacity: 0;
+  }
+}
+
+.SumoSelect {
+  @media (max-width: $breakpoint-md) {
+    width: 100%;
+  }
+
+  & > .CaptionCont {
+    border-radius: 5px;
+    border: 1px solid #CECECE;
+    padding: 14px 20px;
+
+    color: rgba(164, 164, 164, 1);
+    font-size: 18px;
+    font-weight: 300;
+    @include transition(.4);
+
+    & > label {
+      & > i {
+        opacity: .3;
+      }
+    }
+  }
+
+  &.open, &:focus, &:hover {
+    & > .CaptionCont {
+      box-shadow: 0 0 2px #fb0;
+      border-color: #fb0;
+    }
+  }
+
+  & > .optWrapper {
+    z-index: 1;
+
+    & > .options {
+      li.opt {
+
+        color: #a4a4a4;
+        font-weight: 300;
+      }
+    }
+  }
+
+  &.open {
+    & > .optWrapper {
+      top: 52px;
+    }
+  }
+}
+
+
+.decor {
+  &__wrap {
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 100%;
+    height: calc(100% + 100px);
+    overflow: hidden;
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  &__img {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: 95%;
+  }
+
+  &__bg {
+    width: 478px;
+    height: 478px;
+    border-radius: 100%;
+    background-color: #FCF4C1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30px;
+    z-index: 1;
+
+  }
+}
+
+
+.s-event {
+  padding: 65px 0 40px 0;
+  @media (max-width: $breakpoint-md) {
+    padding-top: 40px;
+  }
+
+  & .btn-more {
+    margin-top: 50px;
+    margin-left: 29px;
+    @media (max-width: $breakpoint-md) {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  }
+
+  &__content {
+    padding-left: 29px;
+    @media (max-width: $breakpoint-md) {
+      padding-left: 19px;
+      margin-top: 25px;
+    }
+
+    &:after {
+      content: '';
+      height: 100%;
+      width: 7px;
+      background: #FB0;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  & .number-people {
+    border-radius: 10px;
+    background: #FAF5F3;
+    max-width: 205px;
+    padding: 11px 20px 12px 20px;
+
+    & b {
+      padding-top: 10px;
+      display: block;
+    }
+  }
+}
+
+.event {
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+
+    &-wrap {
+      padding-bottom: 32%;
+      border-radius: 10px;
+      min-height: 300px;
+      @media (max-width: $breakpoint-md) {
+        left: -15px;
+        width: calc(100% + 30px);
+      }
+    }
+  }
+
+  &__heading {
+    color: $accentColor;
+    margin-top: -40px;
+    @include fontSize(27, 40);
+    @media (max-width: $breakpoint-md) {
+      padding: 0 10px;
+    }
+
+    &:after {
+      content: '';
+      width: calc(100% + 40px);
+      position: absolute;
+      left: -20px;
+      top: -16px;
+      border-radius: 10px 10px 0 0;
+      background: #FFF;
+      height: 60px;
+      @media (max-width: $breakpoint-md) {
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.gallery {
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  grid-gap: 20px;
+
+
+  &__item {
+    border-radius: 10px;
+    overflow: hidden;
+
+    & img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &:nth-child(1) {
+      grid-column-start: 1;
+      grid-column-end: 1;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      @media (max-width: $breakpoint-md) {
+
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 1;
+      }
+    }
+
+    &:nth-child(2) {
+      @media (min-width: $breakpoint-md) {
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 1;
+
+      }
+    }
+
+    &:nth-child(3) {
+      @media (min-width: $breakpoint-md) {
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 2;
+      }
+
+    }
+  }
+
+  &__img {
+
+  }
+}
+

@@ -1,0 +1,232 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.pagination {
+  width: 100%;
+  background-color: transparent;
+
+  &-container {
+  //  padding: 100px 0 150px 0;
+    @media (max-width: $breakpoint-lg) {
+   //   padding-bottom: 100px;
+    }
+  }
+
+  & .screen-reader-text {
+    display: none;
+  }
+
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  & .nav-links {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    .page-numbers {
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+
+      @include fontSize(18, 20);
+      font-weight: 300;
+      text-align: center;
+      color: $accentColor;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(70, 92, 163, 0.40);
+      border-radius: 100%;
+      cursor: pointer;
+      @include transition(.4);
+      @media (max-width: $breakpoint-lg) {
+        width: 35px;
+        height: 35px;
+      }
+      @media (max-width: $breakpoint-sm) {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+      }
+
+      & i {
+        @include fontSize(12, 14);
+      }
+
+      &:not(&.prev,&.next) {
+        margin: 0 10px;
+        @media (max-width: $breakpoint-lg) {
+          margin: 0 5px;
+        }
+      }
+
+      &.next, &.prev {
+        border-color: #465CA3;
+        font-size: 0;
+        color: #FFFFFF;
+        padding: 0;
+        line-height: 0;
+        position: relative;
+
+        & i {
+          color: $accentColor;
+          font-size: 12px;
+          @include transition(.4);
+        }
+      }
+
+      &.prev {
+        margin-right: 30px;
+        @media (max-width: $breakpoint-lg) {
+          margin-right: 5px;
+        }
+      }
+
+      &.next {
+        margin-left: 30px;
+        @media (max-width: $breakpoint-lg) {
+          margin-left: 5px;
+        }
+      }
+
+      &.current {
+        color: $whiteColor;
+        font-weight: bold;
+        background-color: $accentColor;
+        border-color: #465CA3;
+      }
+
+      &:hover {
+        background-color: $accentColor;
+        color: $whiteColor;
+
+        & i {
+          color: $whiteColor;
+        }
+      }
+    }
+  }
+}
+
+.event-pagination {
+  .page-numbers {
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    @include fontSize(18, 20);
+    font-weight: 300;
+    text-align: center;
+    color: $accentColor;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(70, 92, 163, 0.40);
+    border-radius: 100%;
+    cursor: pointer;
+    @include transition(.4);
+    @media (max-width: $breakpoint-lg) {
+      width: 35px;
+      height: 35px;
+    }
+    @media (max-width: $breakpoint-sm) {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+    }
+
+    & i {
+      @include fontSize(12, 14);
+    }
+
+    &:not(&.prev,&.next) {
+      margin: 0 10px;
+      @media (max-width: $breakpoint-lg) {
+        margin: 0 5px;
+      }
+    }
+
+    &.next, &.prev {
+      border-color: #465CA3;
+      font-size: 0;
+      color: #FFFFFF;
+      padding: 0;
+      line-height: 0;
+      position: relative;
+
+      &:after {
+        content: '';
+        font-family: 'icomoon' !important;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 12px;
+        color: $accentColor;
+        @include transition(.4);
+      }
+    }
+
+    &.prev {
+      margin-right: 30px;
+      @media (max-width: $breakpoint-lg) {
+        margin-right: 5px;
+      }
+
+      &:after {
+        content: "\e904";
+      }
+    }
+
+    &.next {
+      margin-left: 30px;
+      @media (max-width: $breakpoint-lg) {
+        margin-left: 5px;
+      }
+
+      &:after {
+        content: "\e905";
+      }
+    }
+
+    &.current {
+      color: $whiteColor;
+      font-weight: bold;
+      background-color: $accentColor;
+      border-color: #465CA3;
+    }
+
+    &:hover {
+      background-color: $accentColor;
+      color: $whiteColor;
+
+      &:after {
+        color: $whiteColor;
+      }
+    }
+  }
+}
+
