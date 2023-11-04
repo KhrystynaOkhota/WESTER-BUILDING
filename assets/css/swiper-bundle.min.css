@@ -616,3 +616,34 @@ button.swiper-pagination-bullet {
     /* Windows 8 IE 10 fix */
     -ms-perspective: 1200px;
 }
+
+.swiper-cards {
+    overflow: visible
+}
+
+.swiper-cards .swiper-slide {
+    transform-origin: center bottom;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden
+}
+
+.swiper-3d.swiper-css-mode .swiper-wrapper {
+    perspective: 1200px
+}
+
+.swiper-3d .swiper-wrapper {
+    transform-style: preserve-3d
+}
+
+.swiper-3d {
+    perspective: 1200px
+}
+
+.swiper-cards {
+    overflow: visible;
+}
+
+.swiper-horizontal {
+    touch-action: pan-y;
+}
