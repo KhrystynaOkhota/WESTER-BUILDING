@@ -1,17 +1,102 @@
 @import "../abstracts/mixins";
 @import "../abstracts/variables";
 
+.step {
+  &__item {
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.10);
+    margin: 20px;
+
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 0;
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+      margin: 10px;
+    }
+
+    & .heading {
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: $accentColor;
+      @include fontSize(18, 22);
+      @media (max-width: $breakpoint-md) {
+        width: calc(60% - 10px);
+        margin-bottom: 0;
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    &-wrap {
+      height: 100%;
+      overflow: hidden;
+      border-radius: 10px 0 0 10px;
+      @media (max-width: $breakpoint-md) {
+        width: 40%;
+        height: 175px;
+      }
+    }
+  }
+
+  &__content {
+    padding: 155px 40px 105px 40px;
+    @media (max-width: $breakpoint-md) {
+      width: 100%;
+      padding: 16px 11px;
+    }
+
+
+  }
+
+  &__number {
+    width: 72px;
+    height: 72px;
+    border-radius: 100%;
+    color: $whiteColor;
+    background-color: #AD856D;
+    box-shadow: 0px 4px 20px #AD856D;
+    font-size: 35px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    @media (max-width: $breakpoint-md) {
+      width: 51px;
+      height: 51px;
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  &__top {
+    @media (max-width: $breakpoint-md) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+}
+
 .sip-advantage {
   background-color: #f7f7f7;
   display: grid;
   grid-template-columns: 41% 58%;
-  gap: 24px;
+  gap: 0;
+
 
   &__content {
     display: grid;
     grid-template-columns: 124px 1fr;
     gap: 24px;
-    padding: 60px 30px 60px 0;
+    padding: 20px 30px 20px 0;
+    height: 330px;
+    align-items: center;
 
     & .heading {
       margin-bottom: 17px;
@@ -30,9 +115,9 @@
   }
 
   &__img {
-    height: 140%;
+    height: 160%;
     position: absolute;
-    bottom: 0;
+    bottom: 30px;
     object-fit: cover;
 
     &-wrap {
@@ -306,14 +391,25 @@
     overflow: visible;
   }
 
-  &__top {
+  &__heading {
     margin-bottom: 50px;
+  }
+
+  &__top {
+    padding-bottom: 50px;
+    background: #f7f7f7;
+    position: relative;
+    z-index: 5;
+
   }
 }
 
 .s-partner {
   padding: 92px 0 100px 0;
   background-color: #F7F7F7;
+  @media (max-width: $breakpoint-md) {
+    padding: 50px 0;
+  }
 
   &__top {
     margin-bottom: 38px;
@@ -361,70 +457,33 @@
 
 }
 
-.s-turnkey {
+.s-turnkey-project {
   padding-bottom: 150px;
+  @media (max-width: $breakpoint-md) {
+    padding: 50px 0;
+  }
+
+  & .swiper-container {
+    overflow: visible;
+  }
 
   &__heading {
     margin-bottom: 35px;
-  }
-
-  &__item {
-    border-radius: 10px;
-    background: #FFF;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.10);
-    margin: 10px;
-  }
-
-  &__img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-
-    &-wrap {
-      width: 40%;
-      overflow: hidden;
-      border-radius: 10px 0 0 10px;
-    }
-  }
-
-  &__content {
-    width: calc(60% - 20px);
-    padding: 155px 40px 105px 40px;
     @media (max-width: $breakpoint-md) {
-      width: 100%;
-      padding: 16px 11px;
-    }
-
-    & .heading {
-      margin-bottom: 20px;
-      color: $accentColor;
-      @include fontSize(18, 22);
+      margin-bottom: 25px;
+      text-align: center;
     }
   }
 
-  &__number {
-    width: 72px;
-    height: 72px;
-    border-radius: 100%;
-    color: $whiteColor;
-    background-color: #AD856D;
-    box-shadow: 0px 4px 20px #AD856D;
-    font-size: 35px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    @media (max-width: $breakpoint-md) {
-      width: 51px;
-      height: 51px;
-      top: 10px;
-      right: 10px;
-    }
-  }
+
 }
 
 .s-main {
   &__inner {
     height: 100vh;
+    @media (max-width: $breakpoint-md) {
+      height: auto;
+    }
   }
 
   &__bottom {

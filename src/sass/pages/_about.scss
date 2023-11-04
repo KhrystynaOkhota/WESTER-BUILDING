@@ -7,7 +7,7 @@
     font-size: 45px;
     font-weight: 900;
     letter-spacing: 4.5px;
-    margin-bottom: 23px;
+    margin-bottom: 9px;
     @media (max-width: $breakpoint-md) {
       margin-bottom: 10px;
     }
@@ -19,6 +19,7 @@
       width: 100%;
       height: 1px;
       background-color: $accentColor;
+      margin-bottom: 14px;
 
       &:after {
         content: '';
@@ -48,6 +49,14 @@
       @media (min-width: $breakpoint-xl) {
         text-align: right;
         margin-left: auto;
+
+        & .achievement {
+          &__line {
+            &:after {
+              left: 0;
+            }
+          }
+        }
       }
     }
 
@@ -70,6 +79,9 @@
   //background-color: red;
   padding: 63px 0;
   margin-bottom: 60px;
+  @media (max-width: $breakpoint-lg) {
+    margin-bottom: 0;
+  }
 
   &__bg {
     position: absolute;

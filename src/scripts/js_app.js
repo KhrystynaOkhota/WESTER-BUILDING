@@ -52,7 +52,7 @@ jQuery(function ($) {
       //  options.cardsEffect = true;
 
         if (options.cardsEffect){
-            $p.addClass('card');
+            //$p.addClass('card');
           //  options.effect = 'card';
 
         }
@@ -270,8 +270,8 @@ jQuery(function () {
     $(".burger__wrap").on("click", function () {
         $(this).toggleClass("active"),
             $("header").toggleClass("active"),
-            $(".navbar").toggleClass("is-visible"),
-            $('html').toggleClass('overflow-menu');
+            $(".navbar").toggleClass("is-visible");
+            //$('html').toggleClass('overflow-menu');
     })
 });
 

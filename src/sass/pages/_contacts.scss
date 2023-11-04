@@ -27,6 +27,19 @@
       }
     }
   }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    height: calc(100%);
+    width: 100%;
+    background-color: rgba(105, 68, 52, 1);
+
+    & img {
+      opacity: 0.5;
+    }
+  }
 }
 
 .s-contacts {

@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="navbar">
-            <div class="header__top d-flex align-middle align-justify">
+            <div class="header__top d-flex align-middle">
                 <ul class="contacts --relative d-flex align-middle align-right">
                     <li class="contacts-item">
                         <a href="tel:+310138893711">+31 (0) 13 889 3711</a>
@@ -158,7 +158,9 @@
                 </div>
                 <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 column">
                     <div class="s-info__desc editor-style">
-
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                          </p>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
                             Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
                             ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
@@ -167,14 +169,10 @@
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
                             Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
                             ridiculus mus. </p>
-                        <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
-                            consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
-                            arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                            ridiculus mus. </p>
+                        <p><b>Column-strip:</b> from UAH 2,200/m2</p>
+                        <p><b> Swedish stove:</b> from UAH 3,000/m2</p>
+                        <p><b> Screw piles:</b> from UAH 2,300/m2</p>
+                        <p><b>Column-tape with screed:</b>from UAH 2,500/m2 </p>
                     </div>
                     <a href="" class="btn btn-primary open-popup"
                        data-rel="more">Відкрити попап <i class="icon-arrow-right"></i> </a>
@@ -385,9 +383,11 @@
         </div>
     </section>
 
-
     <section class="section s-cta">
-        <div class="container">
+        <div class="s-cta__bg">
+            <img src="assets/img/contacts.png" alt="" class="">
+        </div>
+        <div class="container overlap">
             <div class="row m-row align-center">
                 <div class="column col-xl-10 col-lg-10 col-md-11 col-sm-12 col-xs-12">
 
@@ -540,6 +540,72 @@
     </div>
 </footer>
 
+<div class="popup-wrapper">
+    <div class="bg-layer"></div>
+
+    <div class="popup-content" data-rel="more">
+        <div class="layer-close"></div>
+        <div class="popup-container">
+            <div class="btn-close d-flex align-middle align-center"><img src="assets/img/close.svg" alt=""></div>
+
+            <div class="cta">
+
+                <div class="heading text-bold text-center">Do you have any questions?</div>
+                <div class="description text-l text-center">Ask it to us and our managers will contact you within an
+                    hour
+                </div>
+
+                <form>
+                    <div class="row m-row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 column">
+                            <div class="form-control">
+                                <input class="form-control__input" type="text" name="" value=""
+                                       placeholder="Name" title="">
+                            </div>
+                            <div class="form-control">
+                                <input class="form-control__input" type="tel" name="" value=""
+                                       placeholder="Phone" title="">
+                            </div>
+                            <div class="form-control">
+                                <input class="form-control__input" type="email" name="" value=""
+                                       placeholder="Email" title="">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 column">
+                            <div class="form-control full-height">
+                                        <textarea class="form-control__textarea" rows=5 name="message1"
+                                                  placeholder="Text"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
+                            <div class="form-control">
+                                <div class="file-container d-flex align-middle align-center">
+                                    <input type="file" accept="image/*,.pdf">
+                                    <button class="file-button d-flex align-middle align-left"><i
+                                            class="icon-clip"></i> Entitle the file
+                                    </button>
+                                    <span class="file-name">File not selected</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column d-flex align-center">
+                            <div class="btn-form">
+                                <span>I want a consultation <i class="icon-arrow-right"></i></span>
+                                <input type="submit" value="I want a consultation"
+                                       class="">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 <script src="./assets/js/jquery-3.7.0.min.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
