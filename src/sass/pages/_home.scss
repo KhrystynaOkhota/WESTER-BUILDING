@@ -41,6 +41,7 @@
       @media (max-width: $breakpoint-md) {
         width: 40%;
         height: 175px;
+        border-radius: 10px;
       }
     }
   }
@@ -78,6 +79,7 @@
     @media (max-width: $breakpoint-md) {
       display: flex;
       align-items: center;
+      padding: 20px 11px;
     }
   }
 
@@ -218,7 +220,7 @@
 .s-about--home {
   padding: 120px 0 90px 0;
   @media (max-width: $breakpoint-md) {
-    padding: 43px 0 83px 0;
+    padding: 43px 0;
   }
 
   & .heading {
@@ -267,7 +269,7 @@
   padding: 93px 0;
   background-color: rgba(247, 247, 247, 1);
   @media (max-width: $breakpoint-md) {
-    padding: 43px 0;
+    padding: 40px 0;
   }
 
   &__top {
@@ -386,6 +388,9 @@
 .s-sip {
   padding: 82px 0 100px 0;
   background-color: rgba(247, 247, 247, 1);
+  @media (max-width: $breakpoint-md) {
+    padding: 40px 0;
+  }
 
   .swiper-container {
     overflow: visible;
@@ -425,12 +430,16 @@
     &-button {
       &__wrap {
         @media (max-width: $breakpoint-md) {
-          margin-top: 30px;
           -webkit-box-pack: end;
           -webkit-justify-content: flex-end;
           -ms-flex-pack: end;
           justify-content: flex-end;
         }
+      }
+    }
+    &-navigation{
+      @media (max-width: $breakpoint-md) {
+        margin-top: 30px;
       }
     }
   }
@@ -460,7 +469,7 @@
 .s-turnkey-project {
   padding-bottom: 150px;
   @media (max-width: $breakpoint-md) {
-    padding: 50px 0;
+    padding: 40px 0;
   }
 
   & .swiper-container {
@@ -482,20 +491,25 @@
   &__inner {
     height: 100vh;
     @media (max-width: $breakpoint-md) {
-      height: auto;
+      height: 100%;
     }
   }
 
   &__bottom {
-    padding: 45px 60px 45px 40px;
+    padding: 45px 40px;
     background-color: rgba(105, 68, 52, 0.8);
     position: absolute;
     right: 0;
     bottom: 0;
     z-index: 2;
+
+    @media (min-width: $breakpoint-md) {
+      min-width: 420px;
+    }
     @media (max-width: $breakpoint-md) {
       padding: 25px 15px;
       width: 100%;
+      max-width: 420px;
       -webkit-box-pack: justify;
       -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
@@ -505,11 +519,28 @@
 
   &__content {
     padding-top: 70px;
+    @media (max-width: $breakpoint-md) {
+      padding: 120px 0 90px 0;
+    }
 
     & .heading {
       margin-bottom: 40px;
       color: $whiteColor;
-      @include fontSize(38, 60);
+      @include fontSize(30, 60);
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 20px;
+      }
+
+      &__sub {
+        margin-bottom: 19px;
+        color: $whiteColor;
+        @include fontSize(15, 20);
+        line-height: 1.5;
+        letter-spacing: 4px;
+        @media (max-width: $breakpoint-md) {
+          margin-bottom: 20px;
+        }
+      }
 
       ::first-letter {
         padding-left: 110px;
@@ -522,13 +553,7 @@
         display: inline-block;
       }
 
-      &__sub {
-        margin-bottom: 19px;
-        color: $whiteColor;
-        @include fontSize(15, 20);
-        line-height: 1.5;
-        letter-spacing: 4px;
-      }
+
     }
 
     & .description {
@@ -536,6 +561,9 @@
       @include fontSize(17, 20);
       line-height: 1.5;
       color: $whiteColor;
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -568,6 +596,9 @@
 
     &-slide {
       overflow: hidden;
+      @media (max-width: $breakpoint-md) {
+        height: auto;
+      }
     }
 
     &-controls {
@@ -594,16 +625,12 @@
     }
 
     &-fraction {
-      margin-right: 50px;
-
       &__current {
         color: $whiteColor;
       }
     }
 
     &-pagination {
-      margin-right: 40px;
-
       &-bullet {
         background-color: rgba(255, 255, 255, 0.3);
 
@@ -612,7 +639,6 @@
         }
       }
     }
-
 
     &-container {
       height: 100vh;

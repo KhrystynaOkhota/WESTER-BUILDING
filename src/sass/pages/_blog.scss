@@ -92,7 +92,9 @@
 
 .s-news {
   padding: 71px 0 44px 0;
-
+  @media (max-width: $breakpoint-md) {
+    padding-bottom: 14px;
+  }
   &__nav {
     margin: 50px 0;
     display: flex;
@@ -102,12 +104,23 @@
       & a {
         display: block;
         padding: 15px;
-        font-size: 17px;
+        @include fontSize(14, 17);
+
         border-radius: 5px;
         background: rgba(173, 133, 109, 0.2);
         @include transition(.5);
         min-width: 205px;
         color: #AD856D;
+
+        @media (max-width: $breakpoint-md) {
+          min-width: 60px;
+          padding: 10px;
+        }
+        @media (max-width: 360px) {
+          font-size: 13px;
+          padding: 10px 5px;
+
+        }
       }
 
 
@@ -120,12 +133,18 @@
 
       &:not(&:last-child) {
         margin-right: 20px;
+        @media (max-width: $breakpoint-md) {
+          margin-right: 10px;
+        }
       }
     }
   }
 
   & .card {
     margin-bottom: 50px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 30px;
+    }
   }
 
   &--slider {

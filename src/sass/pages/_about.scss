@@ -14,7 +14,6 @@
   }
 
   @media (min-width: $breakpoint-xl) {
-
     &__line {
       width: 100%;
       height: 1px;
@@ -155,7 +154,7 @@
 
   &__img {
     max-width: 570px;
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
     @media (min-width: $breakpoint-xl) {
       position: absolute;
       left: 50%;

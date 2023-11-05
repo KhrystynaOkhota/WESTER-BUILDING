@@ -44,17 +44,25 @@ jQuery(function ($) {
             loadPrevNext: true
         };
 
-       // options.effect = 'cards';
-        options.observer = true;//options.effect = 'slide';
+        options.observer = true;
         options.observeParents = true;
         options.watchOverflow = true;
         options.centerInsufficientSlides = true;
-      //  options.cardsEffect = true;
 
-        if (options.cardsEffect){
-            //$p.addClass('card');
-          //  options.effect = 'card';
+        if (!options.navigation) {
+            if (options.mobNav) {
 
+                options.navigation = {
+                    nextEl: $p.find('.swiper-navigation-mob .swiper-button-next')[0],
+                    prevEl: $p.find('.swiper-navigation-mob .swiper-button-prev')[0]
+                };
+
+            } else {
+                options.navigation = {
+                    nextEl: $p.find('.swiper-button-next')[0],
+                    prevEl: $p.find('.swiper-button-prev')[0]
+                };
+            }
         }
 
         if (!options.speed) options.speed = 500;
@@ -271,7 +279,7 @@ jQuery(function () {
         $(this).toggleClass("active"),
             $("header").toggleClass("active"),
             $(".navbar").toggleClass("is-visible");
-            //$('html').toggleClass('overflow-menu');
+        //$('html').toggleClass('overflow-menu');
     })
 });
 

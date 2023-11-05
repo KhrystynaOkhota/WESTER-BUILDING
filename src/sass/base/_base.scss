@@ -263,5 +263,8 @@ html.overflow-menu, html.overflow-menu body {
 
   &-button-next {
     margin-left: 20px;
+    @media (max-width: $breakpoint-md) {
+      margin-left: 5px;
+    }
   }
 }

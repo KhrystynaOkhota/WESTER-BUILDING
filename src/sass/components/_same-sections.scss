@@ -426,7 +426,7 @@
 .s-info {
   padding: 93px 0;
   @media (max-width: $breakpoint-md) {
-    padding: 31px 0;
+    padding: 40px 0;
     overflow: hidden;
   }
 
@@ -496,7 +496,7 @@
 
   &__desc {
     max-width: 90%;
-    text-align: justify;
+    text-align: left;
     @media (max-width: $breakpoint-md) {
       max-width: 100%;
       margin-bottom: 30px;
