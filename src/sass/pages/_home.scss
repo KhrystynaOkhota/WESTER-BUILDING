@@ -90,29 +90,33 @@
   display: grid;
   grid-template-columns: 41% 58%;
   gap: 0;
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
 
 
-  &__content {
-    display: grid;
-    grid-template-columns: 124px 1fr;
-    gap: 24px;
+  &__inner {
+
     padding: 20px 30px 20px 0;
     height: 330px;
     align-items: center;
-
-    & .heading {
-      margin-bottom: 17px;
+    @media (max-width: $breakpoint-md) {
+      padding: 20px;
     }
 
     &:after {
       content: '';
-      width: 140%;
+      width: 125%;
       height: 100%;
       background-color: transparent;
       border: 10px solid rgba(173, 133, 109, .2);
       position: absolute;
       bottom: 0;
       right: 0;
+      @media (max-width: $breakpoint-md) {
+        width: 100%;
+        height: 130%;
+      }
     }
   }
 
@@ -121,12 +125,69 @@
     position: absolute;
     bottom: 30px;
     object-fit: cover;
+    @media (max-width: $breakpoint-md) {
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+    }
 
     &-wrap {
       position: relative;
       z-index: 4;
+      @media (max-width: $breakpoint-md) {
+        height: 300px;
+        width: 90%;
+        left: -15px;
+      }
     }
   }
+
+
+  & .icon {
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    left: 10px;
+    @media (max-width: $breakpoint-md) {
+      width: 91px;
+      height: 91px;
+      position: relative;
+      left: 0;
+    }
+
+    & img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  & .heading {
+    margin-bottom: 17px;
+    @include fontSize(18, 20);
+    color: #AD856D;
+
+    &__wrap {
+      padding-left: 160px;
+      @media (max-width: $breakpoint-md) {
+        padding-left: 0;
+        display: grid;
+        grid-template-columns: 91px 1fr;
+        align-items: center;
+        margin-bottom: 10px;
+        gap: 20px;
+      }
+    }
+  }
+
+  & .description {
+    padding-left: 160px;
+    @media (max-width: $breakpoint-md) {
+      padding-left: 0;
+    }
+  }
+
+
 }
 
 .advantage {
@@ -237,8 +298,8 @@
     margin-bottom: 175px;
     @media (max-width: $breakpoint-md) {
       top: 0;
-      margin-top: 40px;
-      margin-bottom: 108px;
+      max-width: 340px;
+      margin: 40px auto 108px auto;
     }
 
     img {
@@ -389,15 +450,42 @@
   padding: 82px 0 100px 0;
   background-color: rgba(247, 247, 247, 1);
   @media (max-width: $breakpoint-md) {
-    padding: 40px 0;
+    padding: 40px 0 90px 0;
   }
 
-  .swiper-container {
-    overflow: visible;
+  .swiper {
+    &-container {
+      overflow: visible;
+    }
+
+    &-navigation {
+      @media (min-width: $breakpoint-md) {
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+      }
+      @media (max-width: $breakpoint-md) {
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 320px;
+      }
+    }
   }
 
   &__heading {
     margin-bottom: 50px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 0;
+    }
   }
 
   &__top {
@@ -405,7 +493,9 @@
     background: #f7f7f7;
     position: relative;
     z-index: 5;
-
+    @media (max-width: $breakpoint-md) {
+      position: static;
+    }
   }
 }
 
@@ -413,7 +503,7 @@
   padding: 92px 0 100px 0;
   background-color: #F7F7F7;
   @media (max-width: $breakpoint-md) {
-    padding: 50px 0;
+    padding: 50px 0 90px 0;
   }
 
   &__top {
@@ -437,9 +527,15 @@
         }
       }
     }
-    &-navigation{
+
+    &-navigation {
       @media (max-width: $breakpoint-md) {
-        margin-top: 30px;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 400px;
       }
     }
   }
@@ -469,21 +565,49 @@
 .s-turnkey-project {
   padding-bottom: 150px;
   @media (max-width: $breakpoint-md) {
-    padding: 40px 0;
+    padding: 40px 0 90px 0;
   }
 
-  & .swiper-container {
-    overflow: visible;
+  & .swiper {
+    &-container {
+      overflow: visible;
+    }
+
+    &-navigation {
+      @media (min-width: $breakpoint-md) {
+        -webkit-box-pack: end;
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+      }
+      @media (max-width: $breakpoint-md) {
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+
   }
 
   &__heading {
+
+  }
+
+  &__top {
     margin-bottom: 35px;
     @media (max-width: $breakpoint-md) {
       margin-bottom: 25px;
       text-align: center;
     }
   }
-
 
 }
 

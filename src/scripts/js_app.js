@@ -49,21 +49,6 @@ jQuery(function ($) {
         options.watchOverflow = true;
         options.centerInsufficientSlides = true;
 
-        if (!options.navigation) {
-            if (options.mobNav) {
-
-                options.navigation = {
-                    nextEl: $p.find('.swiper-navigation-mob .swiper-button-next')[0],
-                    prevEl: $p.find('.swiper-navigation-mob .swiper-button-prev')[0]
-                };
-
-            } else {
-                options.navigation = {
-                    nextEl: $p.find('.swiper-button-next')[0],
-                    prevEl: $p.find('.swiper-button-prev')[0]
-                };
-            }
-        }
 
         if (!options.speed) options.speed = 500;
         options.roundLengths = true;
