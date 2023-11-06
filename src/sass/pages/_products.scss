@@ -164,9 +164,33 @@
 
   & .block-image {
     height: 100%;
+    @media (max-width: $breakpoint-md) {
+      height: 400px;
+    }
 
     & img {
       height: 100%;
+      object-fit: cover;
+    }
+  }
+
+
+  .list-icon {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: -52px;
+    width:100%;
+    max-width: 315px;
+    margin: 0 auto;
+    position: relative;
+    @media (max-width: $breakpoint-md) {
+      display: flex;
+    }
+
+    & img {
+      width: calc(100% / 3);
+      // height: 105px;
       object-fit: cover;
     }
   }
